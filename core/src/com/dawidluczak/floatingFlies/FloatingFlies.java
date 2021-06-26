@@ -14,7 +14,7 @@ public class FloatingFlies extends ApplicationAdapter {
 	private static float screenWidth, screenHeight;
   private Game game;
 	private final Array<Integer> scores = new Array<>();
-	private BitmapFont scoreFont, startFont;
+	private BitmapFont scoreLabel, startLabel;
   
 	@Override
 	public void create () {
@@ -22,8 +22,8 @@ public class FloatingFlies extends ApplicationAdapter {
 		backgroundImage = new Texture("mount-background.jpg");
 		screenWidth = Gdx.graphics.getWidth();
 		screenHeight = Gdx.graphics.getHeight();
-		scoreFont = initFont(Color.GOLD, 6);
-		startFont = initFont(Color.RED, 2);
+		scoreLabel = initFont(Color.GOLD, 6);
+		startLabel = initFont(Color.RED, 2);
 		game = new Game();
 	}
 
@@ -59,13 +59,13 @@ public class FloatingFlies extends ApplicationAdapter {
 	}
 	
 	void drawLabels(float x){
-		startFont.draw(batch, "Press right mouse button to start...", x, FloatingFlies.getScreenHeight()/2);
+		startLabel.draw(batch, "Press right mouse button to start...", x, FloatingFlies.getScreenHeight()/2);
 		if (scores.size > 0)
 			drawScoreLabel("Last score: " + getLastScore());
 	}
 	
 	void drawScoreLabel(String text){
-		scoreFont.draw(batch, text, FloatingFlies.getScreenWidth()/2, FloatingFlies.getScreenHeight() - 30);
+		scoreLabel.draw(batch, text, FloatingFlies.getScreenWidth()/2, FloatingFlies.getScreenHeight() - 30);
 	}
 	
 	public static float getScreenHeight() {
