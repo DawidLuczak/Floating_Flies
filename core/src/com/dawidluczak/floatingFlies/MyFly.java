@@ -18,7 +18,7 @@ public class MyFly extends Fly{
 	}
 	
 	private void validFlyPosition(FloatingFlies floatingFlies){
-		if (y < HEIGHT){
+		if (y < 0){
 			y = FloatingFlies.getScreenHeight()/2;
 			floatingFlies.stopGame();
 		} else if (y > FloatingFlies.getScreenHeight() - 30){
