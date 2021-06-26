@@ -47,10 +47,10 @@ public class MyFly extends Fly{
 	private void changeTexture(){
 		switch (image.toString()){
 			default:
-			case "fly1.png":
+			case "fly-1.png":
 				image = FlyFactory.getMyFlyTexture2();
 				break;
-			case "fly2.png":
+			case "fly-2.png":
 				image = FlyFactory.getMyFlyTexture1();
 				break;
 		}
